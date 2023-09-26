@@ -1,0 +1,41 @@
+# Crear una lista de artículos de limpieza inicial
+inventario = []
+
+# Función para agregar un artículo al inventario
+def agregar_articulo(nombre, cantidad):
+    articulo = {"nombre": nombre, "cantidad": cantidad}
+    inventario.append(articulo)
+
+# Función para mostrar el inventario
+def mostrar_inventario():
+    for articulo in inventario:
+        print(f"Nombre: {articulo['nombre']}, Cantidad: {articulo['cantidad']}")
+
+# Función principal para gestionar el inventario
+def gestionar_inventario():
+    while True:
+        print("\nMenú de Inventario:")
+        print("1. Agregar artículo")
+        print("2. Mostrar inventario")
+        print("3. Salir")
+        
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "1":
+            nombre = input("Ingrese el nombre del artículo: ")
+            cantidad = int(input("Ingrese la cantidad: "))
+            agregar_articulo(nombre, cantidad)
+            print(f"{nombre} ha sido agregado al inventario.")
+        elif opcion == "2":
+            print("\nInventario actual:")
+            mostrar_inventario()
+        elif opcion == "3":
+            print("¡Adiós!")
+            break
+        else:
+            print("Opción no válida. Por favor, seleccione una opción válida.")
+
+# Ejecutar la función principal
+gestionar_inventario()
+
+
